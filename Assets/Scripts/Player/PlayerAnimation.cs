@@ -11,6 +11,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         _anim = GetComponentInChildren<Animator>();
+        Debug.Log("_anim = " + _anim);
     }
 
     public void Move(float move)
