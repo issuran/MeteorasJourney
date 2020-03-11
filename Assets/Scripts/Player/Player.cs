@@ -9,7 +9,7 @@ public class Player : MonoBehaviour, IDamageable
     private bool resetJumpNeeded = false;
 
     [SerializeField]
-    private float _jumpForce = 5.0f;
+    private float _jumpForce = 7.0f;
 
     [SerializeField]
     private float _speed = 5.0f;
@@ -43,15 +43,12 @@ public class Player : MonoBehaviour, IDamageable
         float move = Input.GetAxisRaw("Horizontal");
         Flip(move);
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space"+Input.GetKeyDown(KeyCode.Space));
             _rigid.velocity = new Vector2(_rigid.velocity.x, _jumpForce);
             StartCoroutine(ResetJumpNeededRoutine());
             _playerAnim.Jump(true);
-        } else if (IsGrounded())
-        {
-            _playerAnim.Jump(false);
         }
 
         _rigid.velocity = new Vector2(move * _speed, _rigid.velocity.y);
@@ -60,9 +57,9 @@ public class Player : MonoBehaviour, IDamageable
 
     bool IsGrounded()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 2.7f, 1 << 20);
-        Debug.DrawRay(transform.position, Vector2.down * 2.7f, Color.green);
-
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 1.2f, 1 << 20);
+        Debug.DrawRay(transform.position, Vector2.down * 1.2f, Color.green);
+        Debug.Log("Walking");
         if (hitInfo.collider != null)
         {
             Debug.Log("Here1");
@@ -111,15 +108,15 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    public void AddGems(int amount)
-    {
-        diamonds += amount;
-        UIManager.Instance.UpdateGemCount(diamonds);
-    }
+    //public void AddGems(int amount)
+    //{
+    //    diamonds += amount;
+    //    UIManager.Instance.UpdateGemCount(diamonds);
+    //}
 
-    public void SubtractGems(int amount)
-    {
-        diamonds -= amount;
-        UIManager.Instance.UpdateGemCount(diamonds);
-    }
+    //public void SubtractGems(int amount)
+    //{
+    //    diamonds -= amount;
+    //    UIManager.Instance.UpdateGemCount(diamonds);
+    //}
 }
