@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-
     private Animator _anim;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         _anim = GetComponentInChildren<Animator>();
-        Debug.Log("_anim = " + _anim);
     }
 
     public void Move(float move)

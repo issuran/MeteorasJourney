@@ -495,7 +495,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943791903}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 2092920185}
@@ -4504,7 +4504,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 56082ec0a2f66b944b7086e081356502, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -4533,6 +4533,7 @@ GameObject:
   - component: {fileID: 2092920186}
   - component: {fileID: 2092920187}
   - component: {fileID: 2092920188}
+  - component: {fileID: 2092920189}
   m_Layer: 21
   m_Name: Player
   m_TagString: Untagged
@@ -4573,7 +4574,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2092920187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4613,3 +4614,14 @@ MonoBehaviour:
   _jumpForce: 5
   _speed: 5
   diamonds: 0
+--- !u!114 &2092920189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092920184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9c635c5201b5c4d86bc52b84ef012e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
