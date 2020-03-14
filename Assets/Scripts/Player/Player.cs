@@ -57,8 +57,8 @@ public class Player : MonoBehaviour, IDamageable
 
     bool IsGrounded()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 1.2f, 1 << 20);
-        Debug.DrawRay(transform.position, Vector2.down * 1.2f, Color.green);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 1.6f, 1 << 20);
+        Debug.DrawRay(transform.position, Vector2.down * 1.6f, Color.green);
         Debug.Log("Walking");
         if (hitInfo.collider != null)
         {
